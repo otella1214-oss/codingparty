@@ -52,4 +52,3 @@ npm run build
 ├── tailwind.config.ts   # 사이버펑크 네온 색상 및 키프레임 애니메이션
 └── package.json         # 의존성 패키지 명세
 ```
-# codingparty
