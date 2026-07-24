@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { Terminal, PlusCircle, CheckCircle2, Code2, Sparkles, HelpCircle, Laptop } from "lucide-react";
+import { Terminal, PlusCircle, CheckCircle2, Code2, Sparkles, HelpCircle, Laptop, Grid } from "lucide-react";
+import Link from "next/link";
 
 /**
  * Hero 컴포넌트 (메인 화면)
@@ -80,14 +81,14 @@ export const Hero: React.FC = () => {
 
             {/* 인터랙티브 액션 버튼 (Placeholder 버튼) */}
             <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
-              {/* 핵심 필수 요구사항: Placeholder 버튼 */}
-              <button
-                onClick={handleAddFeatureClick}
+              {/* 핵심 필수 요구사항: 에라토스테네스의 체 게임 링크 버튼 */}
+              <Link
+                href="/sieve"
                 className="group relative inline-flex items-center justify-center overflow-hidden rounded-lg border border-green-500 bg-green-950/50 px-6 py-3.5 font-mono text-sm font-semibold text-green-400 transition-all hover:bg-green-500 hover:text-black hover:shadow-[0_0_20px_rgba(34,197,94,0.8)] active:scale-95"
               >
                 <PlusCircle className="mr-2 h-4 w-4 transition-transform group-hover:rotate-90" />
-                <span>⚡ 기능 추가하기 (Placeholder)</span>
-              </button>
+                <span>⚡ 에라토스테네스의 체 플레이</span>
+              </Link>
 
               {/* 보조 안내 버튼 */}
               <a
@@ -133,7 +134,7 @@ export const Hero: React.FC = () => {
           </div>
 
           {/* 카드 3: Vercel 배포 시스템 */}
-          <div className="rounded-xl border border-cyan-500/30 bg-cyber-card p-6 transition-all hover:border-cyan-500/70 hover:shadow-[0_0_15px_rgba(6,182,212,0.2)] sm:col-span-2 lg:col-span-1">
+          <div className="rounded-xl border border-cyan-500/30 bg-cyber-card p-6 transition-all hover:border-cyan-500/70 hover:shadow-[0_0_15px_rgba(6,182,212,0.2)]">
             <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg border border-cyan-500/40 bg-cyan-950/30 text-cyan-400">
               <Code2 className="h-5 w-5" />
             </div>
@@ -142,6 +143,17 @@ export const Hero: React.FC = () => {
               GitHub 저장소와 연동하여 커밋 후 푸시하면 Vercel에서 즉시 자동으로 최신 웹앱이 배포됩니다.
             </p>
           </div>
+
+          {/* 카드 4: 에라토스테네스의 체 게임 (신규 모듈) */}
+          <Link href="/sieve" className="group rounded-xl border border-yellow-500/30 bg-cyber-card p-6 transition-all hover:border-yellow-500/70 hover:shadow-[0_0_15px_rgba(234,179,8,0.2)] sm:col-span-2 lg:col-span-1">
+            <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg border border-yellow-500/40 bg-yellow-950/30 text-yellow-400 group-hover:animate-pulse">
+              <Grid className="h-5 w-5" />
+            </div>
+            <h3 className="mb-2 font-mono text-lg font-bold text-white">04. 에라토스테네스의 체</h3>
+            <p className="font-mono text-xs text-gray-400 leading-relaxed">
+              가장 작은 소수를 찾아 순차적으로 클릭하며 배수를 지워나가는 시각적 컴퓨팅 사고력 게임입니다.
+            </p>
+          </Link>
 
         </div>
 
