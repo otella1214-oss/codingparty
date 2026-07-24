@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Terminal, PlusCircle, CheckCircle2, Code2, Sparkles, HelpCircle, Laptop, Grid, Database } from "lucide-react";
+import { Terminal, PlusCircle, CheckCircle2, Code2, Sparkles, HelpCircle, Laptop, Grid, Database, Calendar } from "lucide-react";
 import Link from "next/link";
 
 /**
@@ -80,27 +80,36 @@ export const Hero: React.FC = () => {
               {/* 핵심 필수 요구사항: 에라토스테네스의 체 게임 링크 버튼 */}
               <Link
                 href="/sieve"
-                className="group relative inline-flex items-center justify-center overflow-hidden rounded-lg border border-green-500 bg-green-950/50 px-6 py-3.5 font-mono text-sm font-semibold text-green-400 transition-all hover:bg-green-500 hover:text-black hover:shadow-[0_0_20px_rgba(34,197,94,0.8)] active:scale-95"
+                className="group relative inline-flex items-center justify-center overflow-hidden rounded-lg border border-green-500 bg-green-950/50 px-5 py-3 font-mono text-xs font-semibold text-green-400 transition-all hover:bg-green-500 hover:text-black hover:shadow-[0_0_15px_rgba(34,197,94,0.6)] active:scale-95"
               >
-                <PlusCircle className="mr-2 h-4 w-4 transition-transform group-hover:rotate-90" />
-                <span>⚡ 에라토스테네스의 체 플레이</span>
+                <PlusCircle className="mr-1.5 h-4 w-4 transition-transform group-hover:rotate-90" />
+                <span>⚡ 에라토스테네스 체</span>
+              </Link>
+
+              {/* 신규: 프로그램 일정 및 소개 링크 버튼 */}
+              <Link
+                href="/schedule"
+                className="group relative inline-flex items-center justify-center overflow-hidden rounded-lg border border-cyan-500 bg-cyan-950/50 px-5 py-3 font-mono text-xs font-semibold text-cyan-400 transition-all hover:bg-cyan-500 hover:text-black hover:shadow-[0_0_15px_rgba(6,182,212,0.6)] active:scale-95"
+              >
+                <Calendar className="mr-1.5 h-4 w-4 transition-transform group-hover:scale-110 text-cyan-400 group-hover:text-black" />
+                <span>📅 프로그램 일정 안내</span>
               </Link>
 
               {/* 수학 학습 진도 기록 링크 버튼 */}
               <Link
                 href="/math-progress"
-                className="group relative inline-flex items-center justify-center overflow-hidden rounded-lg border border-pink-500 bg-pink-950/50 px-6 py-3.5 font-mono text-sm font-semibold text-pink-400 transition-all hover:bg-pink-500 hover:text-black hover:shadow-[0_0_20px_rgba(236,72,153,0.8)] active:scale-95"
+                className="group relative inline-flex items-center justify-center overflow-hidden rounded-lg border border-pink-500 bg-pink-950/50 px-5 py-3 font-mono text-xs font-semibold text-pink-400 transition-all hover:bg-pink-500 hover:text-black hover:shadow-[0_0_15px_rgba(236,72,153,0.6)] active:scale-95"
               >
-                <Database className="mr-2 h-4 w-4 text-pink-400 transition-transform group-hover:scale-110 group-hover:text-black" />
-                <span>📊 수학 학습 진도 기록</span>
+                <Database className="mr-1.5 h-4 w-4 text-pink-400 transition-transform group-hover:scale-110 group-hover:text-black" />
+                <span>📊 수학 진도 기록</span>
               </Link>
 
               {/* 보조 안내 버튼 */}
               <a
                 href="#features"
-                className="inline-flex items-center justify-center rounded-lg border border-gray-700 bg-gray-900/60 px-6 py-3.5 font-mono text-sm font-medium text-gray-300 transition-all hover:border-gray-500 hover:text-white"
+                className="inline-flex items-center justify-center rounded-lg border border-gray-700 bg-gray-900/60 px-5 py-3 font-mono text-xs font-medium text-gray-300 transition-all hover:border-gray-500 hover:text-white"
               >
-                <Code2 className="mr-2 h-4 w-4 text-green-400" />
+                <Code2 className="mr-1.5 h-4 w-4 text-green-400" />
                 <span>모듈 구조 보기</span>
               </a>
             </div>
@@ -138,16 +147,16 @@ export const Hero: React.FC = () => {
             </p>
           </div>
 
-          {/* 카드 3: Vercel 배포 시스템 */}
-          <div className="rounded-xl border border-cyan-500/30 bg-cyber-card p-6 transition-all hover:border-cyan-500/70 hover:shadow-[0_0_15px_rgba(6,182,212,0.2)]">
-            <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg border border-cyan-500/40 bg-cyan-950/30 text-cyan-400">
-              <Code2 className="h-5 w-5" />
+          {/* 카드 3: 프로그램 일정 안내 (신규 모듈) */}
+          <Link href="/schedule" className="group rounded-xl border border-cyan-500/30 bg-cyber-card p-6 transition-all hover:border-cyan-500/70 hover:shadow-[0_0_15px_rgba(6,182,212,0.2)]">
+            <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg border border-cyan-500/40 bg-cyan-950/30 text-cyan-400 group-hover:animate-pulse">
+              <Calendar className="h-5 w-5" />
             </div>
-            <h3 className="mb-2 font-mono text-lg font-bold text-white">03. 1초 Vercel 배포</h3>
+            <h3 className="mb-2 font-mono text-lg font-bold text-white">03. 프로그램 일정 안내</h3>
             <p className="font-mono text-xs text-gray-400 leading-relaxed">
-              GitHub 저장소와 연동하여 커밋 후 푸시하면 Vercel에서 즉시 자동으로 최신 웹앱이 배포됩니다.
+              광주수학체험센터의 월별 일정표(캘린더)를 조회하고 4대 핵심 수학 탐구 프로그램 소개 내용을 자세히 검토합니다.
             </p>
-          </div>
+          </Link>
 
           {/* 카드 4: 에라토스테네스의 체 게임 (신규 모듈) */}
           <Link href="/sieve" className="group rounded-xl border border-yellow-500/30 bg-cyber-card p-6 transition-all hover:border-yellow-500/70 hover:shadow-[0_0_15px_rgba(234,179,8,0.2)]">
@@ -161,8 +170,8 @@ export const Hero: React.FC = () => {
           </Link>
 
           {/* 카드 5: 수학 학습 진도 기록 (신규 모듈) */}
-          <Link href="/math-progress" className="group rounded-xl border border-cyan-500/30 bg-cyber-card p-6 transition-all hover:border-cyan-500/70 hover:shadow-[0_0_15px_rgba(6,182,212,0.2)] sm:col-span-2 lg:col-span-1">
-            <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg border border-cyan-500/40 bg-cyan-950/30 text-cyan-400 group-hover:animate-pulse">
+          <Link href="/math-progress" className="group rounded-xl border border-pink-500/30 bg-cyber-card p-6 transition-all hover:border-pink-500/70 hover:shadow-[0_0_15px_rgba(236,72,153,0.2)]">
+            <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg border border-pink-500/40 bg-pink-950/30 text-pink-400 group-hover:animate-pulse">
               <Database className="h-5 w-5" />
             </div>
             <h3 className="mb-2 font-mono text-lg font-bold text-white">05. 수학 학습 진도 기록</h3>
@@ -170,6 +179,17 @@ export const Hero: React.FC = () => {
               학생들의 수학 학습 과목, 단원, 진도율, 학습 시간 및 상태를 Supabase DB에 안전하게 기록하고 대시보드로 확인합니다.
             </p>
           </Link>
+
+          {/* 카드 6: Vercel 배포 시스템 */}
+          <div className="rounded-xl border border-cyan-500/30 bg-cyber-card p-6 transition-all hover:border-cyan-500/70 hover:shadow-[0_0_15px_rgba(6,182,212,0.2)]">
+            <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg border border-cyan-500/40 bg-cyan-950/30 text-cyan-400">
+              <Code2 className="h-5 w-5" />
+            </div>
+            <h3 className="mb-2 font-mono text-lg font-bold text-white">06. 1초 Vercel 배포</h3>
+            <p className="font-mono text-xs text-gray-400 leading-relaxed">
+              GitHub 저장소와 연동하여 커밋 후 푸시하면 Vercel에서 즉시 자동으로 최신 웹앱이 배포됩니다.
+            </p>
+          </div>
 
         </div>
 

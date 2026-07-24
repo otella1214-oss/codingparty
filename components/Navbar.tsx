@@ -47,10 +47,16 @@ export const Navbar: React.FC = () => {
             [02. 에라토스테네스 체]
           </Link>
           <Link
+            href="/schedule"
+            className="font-mono text-sm font-medium text-gray-300 transition-colors hover:text-green-400 hover:glow-text-green"
+          >
+            [03. 프로그램 일정]
+          </Link>
+          <Link
             href="/math-progress"
             className="font-mono text-sm font-medium text-gray-300 transition-colors hover:text-green-400 hover:glow-text-green"
           >
-            [03. 학습 진도]
+            [04. 학습 진도]
           </Link>
         </nav>
 
@@ -94,11 +100,18 @@ export const Navbar: React.FC = () => {
               &gt; 02. 에라토스테네스 체
             </Link>
             <Link
+              href="/schedule"
+              onClick={() => setIsMenuOpen(false)}
+              className="text-green-400 hover:text-pink-400"
+            >
+              &gt; 03. 프로그램 일정
+            </Link>
+            <Link
               href="/math-progress"
               onClick={() => setIsMenuOpen(false)}
               className="text-green-400 hover:text-pink-400"
             >
-              &gt; 03. 학습 진도
+              &gt; 04. 학습 진도
             </Link>
             <div className="flex items-center space-x-2 pt-2 border-t border-gray-800 text-xs text-green-500">
               <Shield className="h-4 w-4" />
