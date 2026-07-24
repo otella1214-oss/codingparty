@@ -55,11 +55,11 @@ export const Hero: React.FC = () => {
               <span>VERCEL BUILD STABILITY: 100% READY</span>
             </div>
 
-            {/* 메인 타이틀: "나의 수업 공간" */}
+            {/* 메인 타이틀: "광주수학체험센터" */}
             <h1 className="mb-4 text-3xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
-              <span className="text-green-400 glow-text-green">나의</span>{" "}
+              <span className="text-green-400 glow-text-green">광주수학</span>{" "}
               <br className="hidden sm:inline" />
-              <span className="text-pink-500 glow-text-pink">수업 공간</span>
+              <span className="text-pink-500 glow-text-pink">체험센터</span>
               <span className="animate-blink text-green-400">_</span>
             </h1>
 
