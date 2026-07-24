@@ -13,7 +13,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 // 2. 검색엔진 최적화(SEO) 및 Vercel 메타데이터 설정
 export const metadata: Metadata = {
-  title: "EDU_CYBER_LAB - 나만의 교육용 웹앱 만들기",
+  title: "EDU_CYBER_LAB - 나의 수업 공간",
   description: "선생님과 학생들이 Vercel을 통해 1초만에 배포할 수 있는 사이버펑크 해커 테마의 교육용 웹앱 보일러플레이트입니다.",
   keywords: ["교육용 웹앱", "Next.js", "TypeScript", "Tailwind CSS", "사이버펑크", "Vercel 배포"],
 };
