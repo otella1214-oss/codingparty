@@ -63,11 +63,7 @@ export const Hero: React.FC = () => {
               <span className="animate-blink text-green-400">_</span>
             </h1>
 
-            {/* 서브 설명 문구 */}
-            <p className="mb-8 max-w-2xl text-sm leading-relaxed text-gray-300 sm:text-base">
-              개발자 및 정보 수업 타겟의 <span className="text-green-400 font-semibold">사이버펑크 미래지향적 보일러플레이트</span>입니다. 
-              Vercel 플랫폼에 에러 없이 즉시 배포할 수 있으며, 아래 버튼을 활용하여 교실에서 필요한 다양한 학습 모듈을 확장해 보세요!
-            </p>
+
 
             {/* 가짜 알림 (버튼 클릭 시 발동) */}
             {showNotification && (
