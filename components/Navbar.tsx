@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { Terminal, Shield, Menu, X, Cpu } from "lucide-react";
+import Link from "next/link";
 
 /**
  * Navbar 컴포넌트
@@ -21,36 +22,36 @@ export const Navbar: React.FC = () => {
           <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-green-500/50 bg-green-950/40 text-green-400 glow-border-green">
             <Terminal className="h-5 w-5 animate-pulse" />
           </div>
-          <a href="#" className="flex flex-col">
+          <Link href="/" className="flex flex-col">
             <span className="font-mono text-lg font-bold tracking-widest text-green-400 glow-text-green">
               EDU_CYBER_LAB<span className="animate-blink text-pink-500">_</span>
             </span>
             <span className="font-mono text-[10px] tracking-wider text-green-600">
               v1.0.0 // EDU_OS
             </span>
-          </a>
+          </Link>
         </div>
 
         {/* 2. 데스크탑 네비게이션 바 메뉴 */}
         <nav className="hidden items-center space-x-8 md:flex">
-          <a
-            href="#hero"
+          <Link
+            href="/"
             className="font-mono text-sm font-medium text-gray-300 transition-colors hover:text-green-400 hover:glow-text-green"
           >
             [01. 메인]
-          </a>
-          <a
-            href="#features"
+          </Link>
+          <Link
+            href="/sieve"
             className="font-mono text-sm font-medium text-gray-300 transition-colors hover:text-green-400 hover:glow-text-green"
           >
-            [02. 모듈]
-          </a>
-          <a
-            href="#about"
+            [02. 에라토스테네스 체]
+          </Link>
+          <Link
+            href="/math-progress"
             className="font-mono text-sm font-medium text-gray-300 transition-colors hover:text-green-400 hover:glow-text-green"
           >
-            [03. 소개]
-          </a>
+            [03. 학습 진도]
+          </Link>
         </nav>
 
         {/* 3. 우측 상태 표시등 (Vercel Ready / Online Badge) */}
@@ -78,27 +79,27 @@ export const Navbar: React.FC = () => {
       {isMenuOpen && (
         <div className="border-b border-green-500/30 bg-black/95 px-4 py-4 md:hidden">
           <div className="flex flex-col space-y-4 font-mono text-sm">
-            <a
-              href="#hero"
+            <Link
+              href="/"
               onClick={() => setIsMenuOpen(false)}
               className="text-green-400 hover:text-pink-400"
             >
               &gt; 01. 메인
-            </a>
-            <a
-              href="#features"
+            </Link>
+            <Link
+              href="/sieve"
               onClick={() => setIsMenuOpen(false)}
               className="text-green-400 hover:text-pink-400"
             >
-              &gt; 02. 모듈
-            </a>
-            <a
-              href="#about"
+              &gt; 02. 에라토스테네스 체
+            </Link>
+            <Link
+              href="/math-progress"
               onClick={() => setIsMenuOpen(false)}
               className="text-green-400 hover:text-pink-400"
             >
-              &gt; 03. 소개
-            </a>
+              &gt; 03. 학습 진도
+            </Link>
             <div className="flex items-center space-x-2 pt-2 border-t border-gray-800 text-xs text-green-500">
               <Shield className="h-4 w-4" />
               <span>SECURITY LEVEL: 100%</span>
